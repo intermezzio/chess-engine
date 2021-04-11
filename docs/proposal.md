@@ -1,7 +1,7 @@
 ---
 title: Final Project Proposal
 subtitle: Checkmatr - The DSA Chess Engine
-author: Andrew Mascillaro
+author: Andrew Mascillaro, Nabih Estefan
 
 ---
 
