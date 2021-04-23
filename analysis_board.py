@@ -8,8 +8,8 @@ class AnalysisBoard(chess.Board):
 	_KNIGHT_POS_EVAL = np.genfromtxt("tables/knight.csv", delimiter=",")
 	_BISHOP_POS_EVAL = np.genfromtxt("tables/bishop.csv", delimiter=",")
 	_PAWN_POS_EVAL   = np.genfromtxt("tables/pawn.csv", delimiter=",")
-	_EVALS = np.array([_PAWN_POS_EVAL; _KNIGHT_POS_EVAL; _BISHOP_POS_EVAL, \
-		_ROOK_POS_EVAL, _QUEEN_POS_EVAL, _KING_POS_EVAL]
+	_EVALS = np.array([_PAWN_POS_EVAL, _KNIGHT_POS_EVAL, _BISHOP_POS_EVAL, \
+		_ROOK_POS_EVAL, _QUEEN_POS_EVAL, _KING_POS_EVAL])
 
 	def __init__(self):
 		super()
@@ -29,7 +29,7 @@ class AnalysisBoard(chess.Board):
 
 		##Calculate what value piece had before
 		## get starting index (in 0-63) from where the piece started
-		startIndex = move.from_square();
+		startIndex = move.from_square()
 		## Turn this into row and column
 		row = startIndex / 8
 		col = startIndex % 8
@@ -54,7 +54,7 @@ class AnalysisBoard(chess.Board):
 		pieceTakenIndex = piece.piece_type - 1
 		##Calculate value piece has now
 		## get starting index (in 0-63) from where the piece ended
-		endIndex = move.to_square();
+		endIndex = move.to_square()
 		## Turn this into row and column
 		row = endIndex / 8
 		col = endIndex % 8
@@ -67,5 +67,3 @@ class AnalysisBoard(chess.Board):
 		## add new eval.
 		self._evaluation.append(newEval)
 		super().push(move)
-
-		pass
