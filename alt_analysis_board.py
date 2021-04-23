@@ -1,7 +1,7 @@
 import chess
 import numpy as np
 
-class AnalysisBoard(chess.Board):
+class AnalysisBoard:
 	_KING_POS_EVAL   = np.genfromtxt("tables/king.csv", delimiter=",")
 	_QUEEN_POS_EVAL  = np.genfromtxt("tables/queen.csv", delimiter=",")
 	_ROOK_POS_EVAL   = np.genfromtxt("tables/rook.csv", delimiter=",")
@@ -10,12 +10,13 @@ class AnalysisBoard(chess.Board):
 	_PAWN_POS_EVAL   = np.genfromtxt("tables/pawn.csv", delimiter=",")
 	_EVALS = [_PAWN_POS_EVAL, _KNIGHT_POS_EVAL, _BISHOP_POS_EVAL,
 		_ROOK_POS_EVAL, _QUEEN_POS_EVAL, _KING_POS_EVAL]
+	_VALUES = [10, 30, 30, 50, 90, 900]
 
 	def __init__(self):
-		super()
 		self._evaluation = [0]
 		self._white_pieces = dict()
 		self._black_pieces = dict()
+		self.board = chess.Board()
 
 	def get_evaluation(self):
 		return self._evaluation[-1]
@@ -23,49 +24,75 @@ class AnalysisBoard(chess.Board):
 	def push(self, move):
 		## Get the piece that was moved
 		## and which of the eval boards it cooresponds to
-		piece = self.piece_at(move.from_square())
+		piece = self.board.piece_at(move.from_square)
 		color = piece.color
 		pieceIndex = piece.piece_type - 1
 
 		##Calculate what value piece had before
 		## get starting index (in 0-63) from where the piece started
-		startIndex = move.from_square();
+		startIndex = move.from_square;
 		## Turn this into row and column
-		row = startIndex / 8
+		row = startIndex // 8
 		col = startIndex % 8
 		## If ir was a black move flip them
-		if not color:
-			row = 8 - row
-			col = 8 - col
+		if color:
+			row = 7 - row
+			col = 7 - col
 		## Calculate what the value the piece was giving before the move was
-		prevValue = _EVALS[pieceIndex][row,col]
-
+		print("row:", row)
+		print("col:", col)
+		prevValue = self._EVALS[pieceIndex][row][col]
+		print("prev value:", prevValue)
 		##Calculate value piece has now
 		## get starting index (in 0-63) from where the piece ended
-		endIndex = move.to_square();
+		endIndex = move.to_square;
 		## Turn this into row and column
-		row = endIndex / 8
+		row = endIndex // 8
 		col = endIndex % 8
+		if color:
+			row = 7 - row
+			col = 7 - col
 		## Calculate what the value the piece was giving after the move was
-		newValue = _EVALS[pieceIndex][row,col]
-
+		newValue = self._EVALS[pieceIndex][row,col]
+		print("new value:", newValue)
+		
 		##extra value to subtract value of piece that might have been taken
-		pieceTaken = self.piece_at(move.to_square())
-		pieceTakenIndex = piece.piece_type - 1
-		##Calculate value piece has now
-		## get starting index (in 0-63) from where the piece ended
-		endIndex = move.to_square();
-		## Turn this into row and column
-		row = endIndex / 8
-		col = endIndex % 8
-		takenValue = _EVALS[pieceIndex][row][col]
+		pieceTaken = self.board.piece_at(move.to_square)
+		print("piece taken:", pieceTaken)
+		if pieceTaken:
+			pieceTakenIndex = piece.piece_type - 1
+			print("pieceTakenIndex", pieceTakenIndex)
+			##Calculate value piece has now
+			## get starting index (in 0-63) from where the piece ended
 
+			endIndex = move.to_square;
+			## Turn this into row and column
+			row = endIndex // 8
+			col = endIndex % 8
+			if color:
+				row = 7 - row
+				col = 7 - col
+			takenValue = self._EVALS[pieceTakenIndex][row][col] + \
+				self._VALUES[pieceTakenIndex]
+		else:
+			takenValue = 0
+		print("takenvalue:", takenValue)
 		## Calculate new evaluation:
 			## Flip last value, add weight of new position, subtract weight
 			## from last position and add value of pieces taken.
+
 		newEval = self.get_evaluation()*-1 + newValue - prevValue + takenValue
+		print(newEval)
 		## add new eval.
 		self._evaluation.append(newEval)
-		super().push(move)
+		self.board.push(move)
 
 		
+if __name__ == "__main__":
+	x = AnalysisBoard()
+	x.push(next(iter(x.board.legal_moves)))
+	print(f"first evaluation: {x.get_evaluation()}")
+	x.push(chess.Move.from_uci("g7g5"))
+	print(f"second evaluation: {x.get_evaluation()}")
+	x.push(chess.Move.from_uci("h3g5"))
+	print(f"third evaluation: {x.get_evaluation()}")
