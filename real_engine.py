@@ -37,7 +37,7 @@ async def main() -> None:
     await engine.quit()
     game = chess.pgn.Game()
     game.add_line(board.move_stack)
-    with open("games/game.pgn", "w") as outfile:
+    with open("games/new.pgn", "w") as outfile:
     	outfile.write(str(game))
 
 asyncio.set_event_loop_policy(chess.engine.EventLoopPolicy())

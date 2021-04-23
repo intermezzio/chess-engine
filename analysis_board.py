@@ -8,13 +8,8 @@ class AnalysisBoard(chess.Board):
 	_KNIGHT_POS_EVAL = np.genfromtxt("tables/knight.csv", delimiter=",")
 	_BISHOP_POS_EVAL = np.genfromtxt("tables/bishop.csv", delimiter=",")
 	_PAWN_POS_EVAL   = np.genfromtxt("tables/pawn.csv", delimiter=",")
-<<<<<<< HEAD
-	_EVALS = np.array([_PAWN_POS_EVAL, _KNIGHT_POS_EVAL, _BISHOP_POS_EVAL, \
-		_ROOK_POS_EVAL, _QUEEN_POS_EVAL, _KING_POS_EVAL])
-=======
 	_EVALS = [_PAWN_POS_EVAL, _KNIGHT_POS_EVAL, _BISHOP_POS_EVAL,
 		_ROOK_POS_EVAL, _QUEEN_POS_EVAL, _KING_POS_EVAL]
->>>>>>> 5f9b3a833d219f60f462138f7db6a89104b043f3
 
 	def __init__(self):
 		super()
@@ -72,8 +67,3 @@ class AnalysisBoard(chess.Board):
 		## add new eval.
 		self._evaluation.append(newEval)
 		super().push(move)
-<<<<<<< HEAD
-=======
-
-		
->>>>>>> 5f9b3a833d219f60f462138f7db6a89104b043f3
