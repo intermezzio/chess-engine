@@ -10,7 +10,7 @@ ic.disable()
 
 class CustomEngine:
 
-    def __init__(self, board=AnalysisBoard(), strategy="alpha-beta", max_depth=4, **kwargs):
+    def __init__(self, board=AnalysisBoard(), strategy="alpha-beta", max_depth=5, **kwargs):
         self._board = board
         self._strategy = strategy
         self._max_depth = max_depth
@@ -52,7 +52,13 @@ class CustomEngine:
             return random()-self._board.get_evaluation(), list()
         if max_depth == None:
             max_depth = self._max_depth
-        
+        if (res := self._board.board.result()) != "*":
+            # game over
+            if res == "1/2-1/2":
+                return 0, list()
+            else:
+                return -(10000 + max_depth - self._max_depth), list()
+
         best_move = list()
         for move in self._board.board.legal_moves:
             ic(move)
@@ -74,10 +80,16 @@ class CustomEngine:
     
     def _alpha_beta_min(self, alpha=-inf, beta=inf, max_depth=None):
         if max_depth == 0:
-            return random()-self._board.get_evaluation(), list()
-        if max_depth == None:
+            return random()+self._board.get_evaluation(), list()
+        if max_depth is None:
             max_depth = self._max_depth
-        
+        if (res := self._board.board.result()) != "*":
+            # game over
+            if res == "1/2-1/2":
+                return 0, list()
+            else:
+                return 10000 + max_depth - self._max_depth, list()
+
         best_move = list()
         for move in self._board.board.legal_moves:
             self._board.push(move)
@@ -100,6 +112,12 @@ class CustomEngine:
             return -self._board.get_evaluation(), list()
         if max_depth == None:
             max_depth = self._max_depth
+        if (res := self._board.board.result()) != "*":
+            # game over
+            if res == "1/2-1/2":
+                return 0, list()
+            else:
+                return 10000 + max_depth - self._max_depth, list()
 
         max_val = -inf
         best_move = [None]

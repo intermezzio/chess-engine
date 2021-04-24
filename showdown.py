@@ -5,7 +5,8 @@ import chess.pgn
 from engine import CustomEngine
 import re
 
-def match(white="stockfish", black="custom", elo=None, name="Python Chess"):
+def match(white="stockfish", black="custom", elo=None, name="Python Chess",
+		strategy="alpha-beta", max_depth=4):
 	game = chess.pgn.Game()
 	game.headers["Event"] = name
 	players = list()
@@ -19,7 +20,7 @@ def match(white="stockfish", black="custom", elo=None, name="Python Chess"):
 			game.headers["White"] = "Stockfish"
 	elif white == "custom":
 		players.append(CustomEngine())
-		game.headers["White"] = "Custom Engine"
+		game.headers["White"] = f"Custom {strategy} Engine (depth {max_depth})"
 	else:
 		players.append(None)
 		game.headers["White"] = input("What is your name? ")
@@ -33,7 +34,7 @@ def match(white="stockfish", black="custom", elo=None, name="Python Chess"):
 			game.headers["Black"] = "Stockfish"
 	elif black == "custom":
 		players.append(CustomEngine())
-		game.headers["Black"] = "Custom Engine"
+		game.headers["Black"] = f"Custom {strategy} Engine (depth {max_depth})"
 	else:
 		black.append(None)
 		game.headers["Black"] = input("What is your name? ")
@@ -91,14 +92,15 @@ def make_player_move(board):
 	try:
 		move = board.parse_san(move_str)
 		assert move in board.legal_moves
-	except ValueError:
+	except ValueError as e:
 		print("What is this gibberish?")
-		make_player_move(board)
+		# print(e)
+		return make_player_move(board)
 	except AssertionError:
 		print("I meant a legal move")
-		make_player_move(board)
+		return make_player_move(board)
 
 	return move
 
 if __name__ == "__main__":
-	match(white="stockfish", black="custom", elo=1600)
+	match(white="stockfish", black="custom", elo=2200) # name="Andrew tries to play the engine")
