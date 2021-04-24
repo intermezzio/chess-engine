@@ -1,4 +1,5 @@
 import chess
+import math
 import numpy as np
 from icecream import ic
 from random import random
@@ -107,8 +108,14 @@ class AnalysisBoard:
 			except Exception as e:
 				print(e)
 				newEval = -self.get_evaluation()
-		self._evaluation.append(newEval)
 		self.board.push(move)
+
+		if self.board.is_checkmate():
+			newEval = math.Inf
+		elif self.board.is_stalemate():
+			newEval = 0
+			
+		self._evaluation.append(newEval)
 
 	def pop(self):
 		del self._evaluation[-1]
@@ -118,6 +125,7 @@ if __name__ == "__main__":
 	x = AnalysisBoard()
 	x.push(next(iter(x.board.legal_moves)))
 	ic(x.get_evaluation())
+	print(type(x.get_evaluation()))
 	x.push(chess.Move.from_uci("g7g5"))
 	ic(x.get_evaluation())
 	x.push(chess.Move.from_uci("h3g5"))
