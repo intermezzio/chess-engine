@@ -1,0 +1,10 @@
+[Event "Python Chess"]
+[Site "?"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Stockfish 1000 Elo"]
+[Black "Custom Engine"]
+[Result "*"]
+[Outcome "0-1"]
+
+1. c4 Nf6 2. Nc3 Nc6 3. d4 d6 4. e4 Bg4 5. Qd2 Nb4 6. f3 Bd7 7. a3 Nc6 8. d5 Na5 9. Be2 Nb3 10. Qe3 Nxa1 11. Qd2 e5 12. b4 Nb3 13. Qe3 Nxc1 14. Qxc1 Nh5 15. Qd2 Nf4 16. Kf1 Ng6 17. Bd3 Be7 18. Nh3 Bxh3 19. gxh3 Nf4 20. Qc2 Qd7 21. h4 Bxh4 22. h3 O-O 23. Rh2 Bf6 24. Qd1 Rfe8 25. Qd2 Rad8 26. Ne2 Nxe2 27. Qxe2 c6 28. dxc6 Qxc6 29. Rg2 Qa4 30. Qe1 Qxa3 31. Be2 g6 32. f4 Qxh3 33. Qc1 Qh1+ 34. Rg1 Qxe4 35. Rg4 Qh1+ 36. Rg1 Qh3+ 37. Rg2 Qh1+ 38. Rg1 Qh3+ 39. Ke1 e4 40. Bf1 Qc3+ 41. Qd2 Bh4+ 42. Kd1 Qxd2+ 43. Kxd2 Bf2 44. Rh1 Bg3 45. f5 gxf5 46. Bg2 d5 47. Kc3 dxc4 48. Kxc4 Rd2 49. Bh3 f4 50. Rb1 f3 51. Rc1 e3 52. Bf5 Red8 53. Rc2 Rc8+ 54. Kb3 Rcxc2 55. Bxc2 Be5 56. Be4 Rf2 57. Bxb7 Bf6 58. Be4 Ba1 59. Kc4 Be5 60. Bd5 a5 61. bxa5 Rc2+ 62. Kb3 Rc5 63. Bc4 Rxa5 64. Kb4 Ra7 65. Bd5 Bd6+ 66. Kb3 f2 67. Bc4 h5 68. Kc3 Ra4 69. Be2 h4 70. Kd3 Bc5 71. Kc3 Ra1 72. Kc2 Ra2+ 73. Kd1 Ba3 74. Bc4 Rd2# *
