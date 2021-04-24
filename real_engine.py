@@ -30,6 +30,7 @@ async def main() -> None:
         
         if not board.is_game_over():
         	new_move = dsa_engine.make_move(result.move)
+            dsa_engine.push(new_move)
         	board.push(new_move)
 
 
