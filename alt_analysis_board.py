@@ -26,7 +26,7 @@ class AnalysisBoard:
 
 	def push(self, move):
 		if self.board.is_castling(move):
-			newEval = self.get_evaluation*-1 + 3 + 0
+			newEval = self.get_evaluation()*-1 + 3 + 0
 		else:
 			try:
 				## Get the piece that was moved
@@ -57,6 +57,9 @@ class AnalysisBoard:
 				if color:
 					row = 7 - row
 					col = 7 - col
+				if move.promotion != None:
+					promValue = self._VALUES[move.promotion-1] - self._VALUES[pieceIndex]
+					pieceIndex = move.promotion - 1
 				## Calculate what the value the piece was giving after the move was
 				newValue = self._EVALS[pieceIndex][row,col]
 				# print("new value:", newValue)
@@ -111,10 +114,10 @@ class AnalysisBoard:
 		self.board.push(move)
 
 		if self.board.is_checkmate():
-			newEval = math.Inf
+			newEval = math.inf
 		elif self.board.is_stalemate():
 			newEval = 0
-			
+
 		self._evaluation.append(newEval)
 
 	def pop(self):
