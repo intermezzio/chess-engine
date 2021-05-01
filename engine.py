@@ -5,16 +5,18 @@ from icecream import ic
 from math import inf
 from random import random
 
-board = chess.Board()
 ic.disable()
 
 class CustomEngine:
 
-    def __init__(self, board=AnalysisBoard(), strategy="alpha-beta", max_depth=5, **kwargs):
-        self._board = board
+    def __init__(self, board=None, strategy="alpha-beta", max_depth=4, **kwargs):
+        self._board = board if board else AnalysisBoard()
         self._strategy = strategy
         self._max_depth = max_depth
         self._engine_opts = kwargs
+
+    def __del__(self):
+        del self._board
 
     def get_board(self):
         return self._board
@@ -36,7 +38,7 @@ class CustomEngine:
         # self._board.push(move)
 
         return move
-        
+
     def _make_move_negamax(self, **kwargs):
         max_val, moves = self._nega_max(**kwargs)
 
@@ -77,7 +79,7 @@ class CustomEngine:
                 best_move = [move] + next_move
 
         return alpha, best_move
-    
+
     def _alpha_beta_min(self, alpha=-inf, beta=inf, max_depth=None):
         if max_depth == 0:
             return random()+self._board.get_evaluation(), list()
@@ -105,7 +107,7 @@ class CustomEngine:
                 best_move = [move] + next_move
 
         return beta, best_move
-            
+
 
     def _nega_max(self, max_depth=3) -> tuple[int, list]:
         if max_depth == 0:
