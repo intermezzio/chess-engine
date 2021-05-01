@@ -1,0 +1,10 @@
+[Event "1619891524"]
+[Site "?"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Custom alpha-beta Engine (depth 3)"]
+[Black "Stockfish 400 Elo"]
+[Result "*"]
+[Outcome "0-1"]
+
+1. Nc3 d6 2. Ne4 f5 3. Ng3 e6 4. Nf3 Nd7 5. d4 Be7 6. Bf4 g5 7. Nxg5 Nf8 8. Nf3 Ng6 9. Be3 a6 10. Qd3 Bf6 11. O-O-O Qe7 12. Nh5 b6 13. Kb1 Bb7 14. d5 Bxd5 15. Nxf6+ Qxf6 16. Bg5 Qf7 17. Qd4 h6 18. Qa4+ b5 19. Qd4 hxg5 20. Nxg5 Qd7 21. c4 Bb7 22. Nxe6 Be4+ 23. Ka1 Qxe6 24. cxb5 axb5 25. a3 Ne5 26. e3 Ra5 27. Qc3 b4 28. Qxb4 Nc6 29. Qc3 Nf6 30. Bc4 d5 31. Bb3 Qd6 32. Rhe1 Rxa3+ 33. bxa3 Qxa3+ 34. Ba2 Qxc3# *

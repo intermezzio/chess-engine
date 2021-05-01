@@ -1,0 +1,10 @@
+[Event "1619892170"]
+[Site "?"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Stockfish 400 Elo"]
+[Black "Custom alpha-beta Engine (depth 4)"]
+[Result "*"]
+[Outcome "0-1"]
+
+1. d4 Nc6 2. Nf3 e6 3. c4 Bb4+ 4. Nc3 Bxc3+ 5. bxc3 Nge7 6. Ba3 d6 7. e3 O-O 8. Be2 Bd7 9. Qc2 f5 10. O-O Re8 11. Rfd1 Ng6 12. Nd2 Qg5 13. f4 Qh4 14. Re1 d5 15. Nf3 Qf6 16. Reb1 dxc4 17. Rxb7 Nh4 18. Bc5 Rad8 19. Rxc7 Nxg2 20. Kxg2 Na5 21. Rxd7 Rxd7 22. Rg1 Nb7 23. Bb4 a5 24. Ne5 Rc7 25. Bh5 g6 26. Qa4 Rec8 27. Bxa5 Rg7 28. Be2 g5 29. Kf2 gxf4 30. Bb6 fxe3+ 31. Kf1 Rxg1+ 32. Kxg1 Nd6 33. Bc5 Qg7+ 34. Bg4 Nb7 35. Qxc4 Nxc5 36. dxc5 Qxe5 37. Be2 Rxc5 38. Qd4 Qxd4 39. cxd4 Rc1+ 40. Bd1 Rxd1+ 41. Kg2 Rxd4 42. h3 e5 43. Kf3 f4 44. a4 Rxa4 45. Ke2 Ra1 46. Kd3 Rh1 47. Ke4 Rxh3 48. Kxe5 Rf3 49. Ke4 Rf2 50. Kd3 Rg2 51. Kc3 f3 52. Kd4 Re2 53. Kd3 h6 54. Ke4 f2 55. Kf4 f1=R+ 56. Ke4 Rf6 57. Kd5 Rf4 58. Kc6 Rb2 59. Kc5 Ra4 60. Kd6 Rc4 61. Ke5 Rf2 62. Ke6 Rd4 63. Ke5 Rc4 64. Kd6 Rcc2 65. Kd7 Rf6 66. Ke8 Rd2 67. Ke7 Kg7 68. Ke8 Re6# *

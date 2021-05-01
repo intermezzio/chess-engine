@@ -1,0 +1,10 @@
+[Event "1619894187"]
+[Site "?"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Stockfish 2400 Elo"]
+[Black "Custom alpha-beta Engine (depth 4)"]
+[Result "*"]
+[Outcome "1-0"]
+
+1. Nf3 Nc6 2. d4 Nf6 3. d5 Nb4 4. c4 Na6 5. Nc3 h6 6. e4 Ng4 7. h3 Nf6 8. e5 Ng8 9. Bd3 Nc5 10. Bf5 d6 11. e6 fxe6 12. Bg6+ Kd7 13. dxe6+ Kc6 14. Nd4+ Kb6 15. b4 Nf6 16. Be3 Ka6 17. bxc5 Bd7 18. c6 Bxc6 19. c5 dxc5 20. Bd3+ Ka5 21. Nb3+ Kb6 22. Bxc5# *

@@ -1,0 +1,10 @@
+[Event "Python Chess"]
+[Site "?"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Custom alpha-beta Engine (depth 4)"]
+[Black "Stockfish 2200 Elo"]
+[Result "*"]
+[Outcome "1/2-1/2"]
+
+1. Nf3 d6 2. e3 e6 3. Nc3 Nd7 4. Bb5 c6 5. Bxc6 bxc6 6. Ne4 d5 7. Ng3 a5 8. d4 a4 9. O-O Bb7 10. Qd3 Ba6 11. Qc3 Qb8 12. Rd1 a3 13. bxa3 Qc8 14. Ne5 h5 15. Qxc6 Qxc6 16. Nxc6 Rc8 17. Ne5 Nxe5 18. dxe5 g5 19. e4 d4 20. Bxg5 h4 21. Nh1 Rh5 22. Bf4 Rd8 23. g4 hxg3 24. Nxg3 Rh4 25. Bg5 Be7 26. Bxh4 Bxh4 27. Nh5 Be2 28. Ng7+ Kf8 29. Re1 Bc4 30. Nh5 Rb8 31. Rad1 Rd8 32. c3 d3 33. Ra1 d2 34. Reb1 Bd3 35. Rb4 Ba6 36. Nf4 Bg5 37. Nh3 d1=Q+ 38. Rxd1 Rxd1+ 39. Kg2 Be7 40. Rb8+ Kg7 41. Nf4 Re1 42. Ra8 Be2 43. Nxe2 Rxe2 44. Ra4 Bc5 45. Kf1 Rc2 46. c4 Rc3 47. Kg1 Ne7 48. h4 Ng8 49. h5 Bd4 50. c5 Rd3 51. Rc4 Ne7 52. a4 Kg8 53. Rc1 Nc6 54. h6 Bb2 55. Rb1 Ba3 56. Kh1 Kh7 57. Rb3 Nb4 58. Kg1 Rxb3 59. axb3 Bc1 60. Kh1 Nc6 61. a5 Ba3 62. b4 Bxb4 63. a6 Bxc5 64. Kg2 Kxh6 65. f4 Nd4 66. Kh1 Ne2 67. Kh2 Be3 68. f5 Kg7 69. f6+ Kf8 70. a7 Bxa7 71. Kg2 Bf2 72. Kxf2 Nd4 73. Kg2 Nb3 74. Kf1 Nc5 75. Kg2 Na4 76. Kh2 Nb2 77. Kh1 Nc4 78. Kh2 Ne3 79. Kh1 Nc2 80. Kh2 Nb4 81. Kg2 Nd3 82. Kh1 Nc5 83. Kg2 Nb7 84. Kh1 Kg8 85. Kg2 Kh8 86. Kf1 Kg8 87. Kf2 Na5 88. Kg2 Kh7 89. Kh1 Nc6 90. Kg2 Nb4 91. Kf1 Nd3 92. Kg2 Kg6 93. Kf1 Kh7 94. Kg2 Kg6 95. Kh1 Nxe5 96. Kg2 Kg5 97. Kf1 Kh5 98. Kf2 Kh4 99. Kg2 Nc4 100. Kh2 Ne5 101. Kh1 Kg3 102. Kg1 Kg4 103. Kg2 Kh4 104. Kf2 Kg4 105. Kg2 Kh4 106. Kf2 Kh3 107. Kf1 Kg4 108. Kg2 Nc6 109. Kg1 Kh4 110. Kg2 Kg5 111. Kf1 Kg4 112. Kg1 Kh5 113. Kf2 Kg5 114. Kg2 Kxf6 115. Kf2 Kg5 116. Kg3 f6 117. Kf3 Ne7 118. Kg3 Nc6 119. Kf3 Kh4 120. Kg2 Ne5 121. Kg1 Nc6 122. Kh1 Ne5 123. Kg1 Kh3 124. Kf1 Kh4 125. Kg1 Kg3 126. Kf1 Kh4 127. Kg1 Kh3 128. Kf1 Kh4 129. Kg1 *
