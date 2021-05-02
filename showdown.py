@@ -36,7 +36,7 @@ def match(white="stockfish", black="custom", elo=None, name="Python Chess",
 		players.append(CustomEngine(max_depth=max_depth))
 		game.headers["Black"] = f"Custom {strategy} Engine (depth {max_depth})"
 	else:
-		black.append(None)
+		players.append(None)
 		game.headers["Black"] = input("What is your name? ")
 
 	official_board = chess.Board()
@@ -116,4 +116,4 @@ def make_player_move(board):
 	return move
 
 if __name__ == "__main__":
-	match(white="stockfish", black="custom", elo=2200) # name="Andrew tries to play the engine")
+	match(white="stockfish", black="human", elo=5000) # name="Andrew tries to play the engine")
