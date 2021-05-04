@@ -12,7 +12,7 @@ of our current computers, we aren't even
 close to solving the game of chess by brute force.
 As a fallback, engines use a heuristic to
 try to find the best moves for a given player,
-which basically traverses a "game tree" (tree 
+which basically traverses a "game tree" (tree
 of possible moves for both players) and quantitatively
 evaluates the resulting position. This project
 primarily focuses on how to efficiently
@@ -52,7 +52,7 @@ the linked research.
 ### Alpha Beta Pruning
 
 A standard minimax traversal can be very slow,
-so shortcuts are very useful. 
+so shortcuts are very useful.
 Alpha beta pruning stops traversing a portion
 of the game tree that is already known to be
 bad. For example, if white makes a move that
@@ -85,6 +85,33 @@ the ProbCut algorithm can be found [**here**](https://www.chessprogramming.org/P
 
 ## Positional and Material Heuristic
 
+Our evaluation function starts with the base
+evaluation of a board from the perspective of
+white (which is always the same since board
+always starts the same) and then for every
+move being tested (for both white and black)
+is added to an evaluation stack. The change
+in the evaluation value for every move is
+calculated by adding the difference of values
+for the position of the moved piece, and then
+adding any extra changes given by pieces being
+taken.
+
+As mentioned above, we have a set of tables
+that represent weighting for each piece in
+each position on the board. This represents 
+how good this position is for a given piece.
+
+We also ran a set of test games against Stockfish
+with different depths of search in our custom algorithm,
+we then took these and averaged the win percentages of
+our algorithm and the average time it took for the whole
+game to play out. You can see these two graphs below.
+- Talk about the Tables csvs
+- Plot speed against somethign else (name is timestamp in unix time)
+- plot w/l ratio for each one of the depths
+- Talk about the evaluation function and stack
+- plots on how they are doing
 
 
 ## Endgame Tablebases as a Heuristic
@@ -118,4 +145,3 @@ Our algorithm has played a variety of games, many
 of which are stored in the `games/` folder of the project
 repostory as PGN files. It has beat Stockfish in a variety of games
 as shown in ~~results~~.
-

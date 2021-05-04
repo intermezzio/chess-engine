@@ -1,0 +1,15 @@
+white,black,elo,result,adj_result,name, time(secs)
+custom,stockfish,400,0.0,0.0,games/1619891731.pgn,6
+stockfish,custom,400,0.0,1.0,games/1619891737.pgn,13
+custom,stockfish,400,0.0,0.0,games/1619891750.pgn,4
+stockfish,custom,400,0.0,1.0,games/1619891754.pgn,19
+custom,stockfish,800,1.0,1.0,games/1619891773.pgn,13
+stockfish,custom,800,0.5,0.5,games/1619891786.pgn,15
+custom,stockfish,800,0.0,0.0,games/1619891801.pgn,17
+stockfish,custom,800,0.0,1.0,games/1619891818.pgn,12
+custom,stockfish,1200,1.0,1.0,games/1619891830.pgn,19
+stockfish,custom,1200,1.0,0.0,games/1619891849.pgn,10
+custom,stockfish,1200,0.0,0.0,games/1619891859.pgn,7
+stockfish,custom,1200,1.0,0.0,games/1619891866.pgn,14
+custom,stockfish,1600,0.5,0.5,games/1619891880.pgn,14
+stockfish,custom,1600,1.0,0.0,games/1619891897.pgn,13
