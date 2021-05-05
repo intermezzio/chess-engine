@@ -99,22 +99,8 @@ taken.
 
 As mentioned above, we have a set of tables
 that represent weighting for each piece in
-each position on the board. This represents 
+each position on the board. This represents
 how good this position is for a given piece.
-
-We also ran a set of test games against Stockfish
-with different depths of search in our custom algorithm,
-we then took these and averaged the win percentages of
-our algorithm and the average time it took for the whole
-game to play out. You can see these two graphs below.
-- Talk about the Tables csvs
-- Plot speed against somethign else (name is timestamp in unix time)
-- plot w/l ratio for each one of the depths
-- Talk about the evaluation function and stack
-- plots on how they are doing
-
-
-## Endgame Tablebases as a Heuristic
 
 # Our Implementation
 
@@ -144,4 +130,16 @@ algorithm a lot of time.
 Our algorithm has played a variety of games, many
 of which are stored in the `games/` folder of the project
 repostory as PGN files. It has beat Stockfish in a variety of games
-as shown in ~~results~~.
+as shown in ~~Results~~.
+
+# Results
+
+We ran a set of test games against Stockfish
+with different depths of search in our custom algorithm,
+we then took these and averaged the win percentages of
+our algorithm and the average time it took for the whole
+game to play out. You can see these two graphs below.
+
+![Gametime Graph](../data/AvgTime.jpg)
+
+![Win Percentage Graph](../data/AvgWin.jpg)
