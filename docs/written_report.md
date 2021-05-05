@@ -143,3 +143,21 @@ game to play out. You can see these two graphs below.
 ![Gametime Graph](../data/AvgTime.jpg)
 
 ![Win Percentage Graph](../data/AvgWin.jpg)
+
+You can also see a GIF of one of the short games
+our engine played below, in this case our engine
+on depth 4 is playing as white against a
+Stockfish ELO 3200:
+
+![Win Percentage Graph](../data/1619924817.gif)
+
+# Conclusions
+
+All in all, we are very happy with the engine we
+were able to create. It is not perfect by any means,
+but it is a very decent engine that holds up against
+other high level engines. One of the big things we
+could do to improve out engines is make its endgame
+choices better. We could try and implement the endgame
+tablebase included in Python's Chess which would improve
+the heuristic and hopefully make the engine better at games.
