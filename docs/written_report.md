@@ -146,7 +146,7 @@ game to play out. You can see these two graphs below.
 
 You can also see a GIF of one of the short games
 our engine played below, in this case our engine
-on depth 4 is playing as black against a
+on depth 5 is playing as white against a
 Stockfish ELO 3200 in our data folder named the
 same as the .pgn we took the data from.
 
