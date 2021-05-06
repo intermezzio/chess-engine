@@ -146,11 +146,18 @@ game to play out. You can see these two graphs below.
 
 You can also see a GIF of one of the short games
 our engine played below, in this case our engine
-on depth 4 is playing as white against a
-Stockfish ELO 3200:
+on depth 4 is playing as black against a
+Stockfish ELO 3200 in our data folder named the
+same as the .pgn we took the data from.
+
+You can also see other games at [lichess.com](lichess.com).
+Choose the pgn file you want from games/ and enter its
+contents into the website to see the game play-for-play.
+
+<!---
 
 ![Win Percentage Graph](../data/1619924817.gif)
-
+--->
 # Conclusions
 
 All in all, we are very happy with the engine we
