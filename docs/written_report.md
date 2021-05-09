@@ -2,6 +2,15 @@
 title: Checkmatr Written Report
 author: Andrew Mascillaro, Nabih Estefan
 
+titlepage: true
+titlepage-text-color: "FFFFFF"
+titlepage-rule-color: "360049"
+titlepage-rule-height: 0
+titlepage-background: "titlepage.pdf"
+
+listings-no-page-break: true
+page-background: bluebg.pdf
+
 ---
 
 # Overview
@@ -22,7 +31,7 @@ To test the engine's strength, we have scripts
 that allow the engine to play agains humans or Stockfish (a top
 open source chess engine) at different rating levels.
 Our engine outperformed our expectations, and has
-won games against the 2200 rated Stockfish engine,
+won games against the 2400 rated Stockfish engine,
 which basically means this engine is strong enough
 to be a titled player in the chess world.
 
@@ -130,20 +139,22 @@ algorithm a lot of time.
 Our algorithm has played a variety of games, many
 of which are stored in the `games/` folder of the project
 repostory as PGN files. It has beat Stockfish in a variety of games
-as shown in ~~Results~~.
+as shown below.
 
 # Results
 
 We ran a set of test games against Stockfish
 with different depths of search in our custom algorithm,
-we then took these and averaged the win percentages of
-our algorithm and the average time it took for the whole
-game to play out. You can see these two graphs below.
+we then took these and calculated (a) the average the win
+percentage of our algorithm and (b) the average time it
+took for the whole game to play out.
+You can see these two graphs below.
 
 ![Gametime Graph](../data/AvgTime.jpg)
 
 ![Win Percentage Graph](../data/AvgWin.jpg)
 
+<<<<<<< HEAD
 You can also see a GIF of one of the short games
 our engine played below, in this case our engine
 on depth 5 is playing as white	 against a
@@ -153,6 +164,40 @@ same as the .pgn we took the data from.
 You can also see other games at [lichess.com](lichess.com).
 Choose the pgn file you want from games/ and enter its
 contents into the website to see the game play-for-play.
+=======
+As shown, the depth 3 engine moved almost immediately.
+Given that the games had about 70 moves each, each move took
+a fraction of a second. However, it took about one second per
+move with the depth 4 engine. The depth 5 engine was so slow 
+(it took anywhere from 30s to a couple of minutes per move) that
+it did not make sense to even put it on this scale, and
+we decided that the depth 4 engine was the strongest
+engine that ran within a reasonable time.
+
+The engine performed significantly better at depth 4,
+faring well against even 2000-2400 rated opponents, while
+the depth 3 engine was still decent against a 1600 opponent.
+Further analysis of these games shows that while the
+engine is relatively solid, a fixed BFS doesn't know how to
+win an endgame where there may be a forced checkmate in,
+say, 10 moves, but it just doesn't have the intuition
+to see this checkmate so many moves ahead. These can cause
+some obviously winning positions to end up drawn for the
+engine. Overall, both of these engines were pretty decent.
+
+As a simple test, Andrew (~1650 Elo) played the depth 4
+engine and reached a fairly equal endgame which was basically
+drawn. The engine seemed to play solid moves and was
+a decent opponent.
+
+Our presentation includes GIFs of some of the games
+our engine played, and the [**lichess study here**](https://lichess.org/study/MKYC0bO4)
+has records of games played with depths 4-5 against Stockfish
+ELO 1600-3200. All of the .pgn files (chess notation files)
+from our study are in the `games/` folder, or you can
+create a new game by running `showdown.py` with custom
+settings for engine depth and other information.
+>>>>>>> 679744eefd4d0ceaf424342f36ce1dc534c936e9
 
 <!---
 
@@ -161,10 +206,16 @@ contents into the website to see the game play-for-play.
 # Conclusions
 
 All in all, we are very happy with the engine we
-were able to create. It is not perfect by any means,
+were created. It is not perfect by any means,
 but it is a very decent engine that holds up against
 other high level engines. One of the big things we
-could do to improve out engines is make its endgame
-choices better. We could try and implement the endgame
-tablebase included in Python's Chess which would improve
-the heuristic and hopefully make the engine better at games.
+could do to improve out engine is make its endgame
+choices better. We could try and implement an endgame
+tablebase which introduces a new heuristic and algorithm
+customized for endgame play. We can add features like
+ProbCut to make the current search algorithm more efficient.
+Finally, an opening book would introduce a third heuristic
+and list of precalculated opening moves that reach more
+desirable middlegames, since the all-purpose heuristic
+we implemented is best suited for middlegames and not
+good but not ideal for opening play.
