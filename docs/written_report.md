@@ -44,7 +44,7 @@ is calculated.
 More information can be found [**here**](https://www.chessprogramming.org/Minimax).
 While the space complexity of this is negligible,
 the time complexity is $m^p$, where each
-player has roughly $m$ moves per ply $p$ (a
+player has roughly $m$ moves per play $p$ (a
 ply is half of a move or just one turn for one
 player). The proof for this is explained in
 the linked research.
@@ -146,7 +146,7 @@ game to play out. You can see these two graphs below.
 
 You can also see a GIF of one of the short games
 our engine played below, in this case our engine
-on depth 5 is playing as white against a
+on depth 5 is playing as white	 against a
 Stockfish ELO 3200 in our data folder named the
 same as the .pgn we took the data from.
 
