@@ -150,21 +150,10 @@ percentage of our algorithm and (b) the average time it
 took for the whole game to play out.
 You can see these two graphs below.
 
-![Gametime Graph](../data/AvgTime.jpg)
+![Game Time Graph](../data/AvgTime.svg)
 
-![Win Percentage Graph](../data/AvgWin.jpg)
+![Win Percentage Graph](../data/AvgWin.svg)
 
-<<<<<<< HEAD
-You can also see a GIF of one of the short games
-our engine played below, in this case our engine
-on depth 5 is playing as white	 against a
-Stockfish ELO 3200 in our data folder named the
-same as the .pgn we took the data from.
-
-You can also see other games at [lichess.com](lichess.com).
-Choose the pgn file you want from games/ and enter its
-contents into the website to see the game play-for-play.
-=======
 As shown, the depth 3 engine moved almost immediately.
 Given that the games had about 70 moves each, each move took
 a fraction of a second. However, it took about one second per
@@ -197,7 +186,6 @@ ELO 1600-3200. All of the .pgn files (chess notation files)
 from our study are in the `games/` folder, or you can
 create a new game by running `showdown.py` with custom
 settings for engine depth and other information.
->>>>>>> 679744eefd4d0ceaf424342f36ce1dc534c936e9
 
 <!---
 
@@ -206,7 +194,7 @@ settings for engine depth and other information.
 # Conclusions
 
 All in all, we are very happy with the engine we
-were created. It is not perfect by any means,
+created. It is not perfect by any means,
 but it is a very decent engine that holds up against
 other high level engines. One of the big things we
 could do to improve out engine is make its endgame
